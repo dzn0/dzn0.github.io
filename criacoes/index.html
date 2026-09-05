@@ -41,32 +41,326 @@
     <header class="hero">
       <div>
         <p class="eyebrow">Coleção de Criações</p>
-        <h1>Explorações</h1>
+        <h1>Criações</h1>
         <p class="lede">
-          Um espaço mais livre — design, protótipos visuais e experimentos que não
-          precisam necessariamente ser "úteis".
+          Projetos e experimentos com um lado mais pessoal ou criativo, que não se
+          encaixam no formato mais técnico do Portfólio de Projetos.
         </p>
       </div>
     </header>
 
     <section>
-      <h2>Em construção</h2>
-      <div class="placeholder">
-        Ainda decidindo o que entra aqui — telas do analisa-cv, um experimento novo,
-        ou algo mais pessoal. Vamos preenchendo aos poucos.
+      <div class="ai-legend box-pink">
+        <div class="box-title-row">
+          <img src="../assets/creations/dznsmp/logo.png" alt="Logo do DznSMP" />
+          <h2>DznSMP — servidor de Minecraft</h2>
+        </div>
+        <span class="ai-badge vibecoded">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(45 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(90 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(135 12 12)"/>
+          </svg>
+          Vibecoded com Claude Code
+        </span>
+        <p style="margin-top: 12px;">
+          Rede de servidores de Minecraft em produção (<strong>dznsmp.net</strong>), com
+          jogadores reais: um Lobby e uma SMP (sobrevivência), rodando sobre DivineMC
+          (fork do Paper/Bukkit). A lógica de jogo — economia,
+          loja, clãs, ranking, casas/teleporte, menus — é feita por cerca de 25 plugins
+          Java customizados, compilados manualmente via <code>javac</code>/classpath
+          (sem Maven ou Gradle). A autenticação é cross-server: o jogador loga uma vez
+          no Lobby (via AuthMe) e transita pros outros servidores através de uma tabela
+          de sessões num banco H2 compartilhado, acessado por pool de conexões
+          HikariCP. Tem também uma stack de anti-cheat própria (GrimAC, AntiFreecam,
+          CheckHacks, ESPShield) e se integra com o bot de Discord ao lado pra vínculo
+          de conta, cargos e economia.
+        </p>
+        <p class="ai-note">
+          <strong>Uso de IA:</strong> desenvolvido com o Claude Code como principal
+          ferramenta de escrita de plugins/scripts — toda mudança é testada localmente
+          antes, e só eu decido quando aplicar em produção; a IA nunca reinicia o
+          servidor ou mexe no banco de dados sozinha.
+        </p>
+        <div class="stack">
+          <span>Java</span>
+          <span>Paper/DivineMC API</span>
+          <span>Bukkit</span>
+          <span>H2</span>
+          <span>HikariCP</span>
+          <span>MySQL</span>
+        </div>
+        <div class="shot-list">
+          <figure>
+            <img src="../assets/creations/dznsmp/lobby.png" alt="Spawn do Lobby do DznSMP, com a fachada da mansão e o nome DZN em blocos" />
+            <figcaption>
+              <strong>Spawn do Lobby</strong>
+              <span>
+                Construção em grupo, com amigos. Usei WorldEdit pra edição rápida de
+                terreno/blocos em massa, e Litematica pra salvar partes da build como
+                schematic e alinhar tudo com precisão antes de copiar pro servidor de
+                produção.
+              </span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/creations/dznsmp/gui-loja.png" alt="Menu de itens do /menu com opções como Comprar, Vender, Leilão, Teleporte, Casas, Clãs e Rankings" />
+            <figcaption>
+              <strong>GUI do /menu</strong>
+              <span>
+                Menu customizado (plugin DznMenu) feito com a Inventory API do Bukkit —
+                cada item é clicável e dispara uma ação em Java (abrir loja, teleporte,
+                ranking etc). O mesmo menu também existe como datapack nativo do
+                Minecraft pra aparecer no ESC, tecnicamente separado do plugin.
+              </span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/creations/dznsmp/tablist.png" alt="Lista de jogadores (TAB) mostrando nick, saldo e ping de cada um" />
+            <figcaption>
+              <strong>TAB list</strong>
+              <span>
+                Lista de jogadores customizada com o plugin TAB, usando placeholders
+                (PlaceholderAPI) que puxam o saldo em tempo real do plugin de economia
+                (DznEconomia) pra mostrar ao lado do nick de cada um.
+              </span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/creations/dznsmp/holograma-ranking.png" alt="Hologramas de ranking no spawn mostrando TOP Cristais, TOP Dinheiro, TOP Kills, TOP Tempo e TOP Clã" />
+            <figcaption>
+              <strong>Holograma de ranking (DznRanking)</strong>
+              <span>
+                Textos flutuantes renderizados com o DecentHolograms, atualizados
+                periodicamente pelo plugin DznRanking, que consulta o banco H2
+                compartilhado pra montar os tops de dinheiro, cristais, kills, tempo
+                online e clã.
+              </span>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <!--
-      Modelo pra quando tiver conteúdo — copiar o bloco abaixo dentro de uma <section>:
-
-      <div class="gallery">
-        <figure>
-          <img src="../assets/exemplo.png" alt="Descrição da imagem" />
-          <figcaption>Nome da peça — contexto curto</figcaption>
-        </figure>
+    <section>
+      <div class="ai-legend box-blurple">
+        <h2>Bot do Discord — DznSMP</h2>
+        <span class="ai-badge vibecoded">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(45 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(90 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(135 12 12)"/>
+          </svg>
+          Vibecoded com Claude Code
+        </span>
+        <p style="margin-top: 12px;">
+          Bot de Discord separado do servidor de jogo, mas integrado a ele: vincula
+          conta do Discord ao nick do Minecraft, dá cargo automático por plano/
+          assinatura, sistema de XP e economia, boas-vindas customizadas, rastreio de
+          convites, automod, tickets de suporte/denúncia e candidaturas de staff
+          (Helper/Dev) com painéis próprios. Escrito em Node.js com discord.js 14 (ES
+          modules); guarda dados leves em JSON local (convites, XP, vínculos) e consulta
+          MySQL para o que é compartilhado com o servidor de jogo.
+        </p>
+        <p class="ai-note">
+          <strong>Uso de IA:</strong> desenvolvido com o Claude Code — cada
+          funcionalidade nova (comando, painel, automação) é implementada e testada
+          antes de ir pro bot em produção.
+        </p>
+        <div class="stack">
+          <span>Node.js</span>
+          <span>discord.js 14</span>
+          <span>mysql2</span>
+          <span>ES Modules</span>
+        </div>
+        <div class="shot-list">
+          <figure>
+            <img src="../assets/creations/discord-bot/embed-boas-vindas.png" alt="Embed de boas-vindas do bot cumprimentando um novo membro que entrou no servidor" />
+            <figcaption>
+              <strong>Embed de boas-vindas</strong>
+              <span>
+                Mensagem automática disparada pelo bot (discord.js) no evento
+                <code>GuildMemberAdd</code>, com embed customizado que já busca o canal
+                de regras e o número do membro direto da API do Discord.
+              </span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/creations/discord-bot/painel-tickets.png" alt="Painel de central de atendimento do bot, com categorias de ticket num menu suspenso" />
+            <figcaption>
+              <strong>Painel de tickets (Central de atendimento)</strong>
+              <span>
+                Menu de seleção (<code>StringSelectMenu</code> do discord.js) — ao
+                escolher uma categoria, o bot cria um canal privado novo via API do
+                Discord, com permissão só pra quem abriu o ticket e a equipe.
+              </span>
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/creations/discord-bot/painel-helper.png" alt="Formulário de candidatura para a vaga de Helper, com requisitos e reações de aprovação" />
+            <figcaption>
+              <strong>Painel de candidatura Helper</strong>
+              <span>
+                Embed fixo publicado no canal de candidaturas; o bot controla o número
+                de vagas por config e desabilita o formulário sozinho ("Sem vagas")
+                quando chega a zero, sem precisar editar a mensagem na mão.
+              </span>
+            </figcaption>
+          </figure>
+        </div>
       </div>
-    -->
+    </section>
+
+    <section>
+      <div class="ai-legend box-cyan">
+        <h2>Iris — Sistema de visão computacional</h2>
+        <span class="ai-badge vibecoded">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(45 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(90 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(135 12 12)"/>
+          </svg>
+          Vibecoded com Claude Code
+        </span>
+        <p style="margin-top: 12px;">
+          Sistema de detecção de objetos em tempo real, escrito em <strong>C++17</strong>:
+          captura de tela em baixa latência via DXGI/DirectX 11, inferência com um
+          modelo YOLO26s rodando via ONNX Runtime acelerado por GPU (DirectML,
+          compatível com qualquer placa DirectX 11), e um driver próprio em
+          <strong>modo kernel</strong> pra input de mouse — contorna a camada Win32
+          diretamente, carregado por um mapper de driver não assinado baseado no
+          kdmapper. O launcher, em C#, cuida de autenticação, validação e atualização
+          automática. Foi um projeto exploratório pra mexer com fundamentos que não
+          aparecem no dia a dia de desenvolvimento web: inferência de visão
+          computacional em tempo real, programação em modo kernel no Windows, e
+          otimização de latência ponta a ponta.
+        </p>
+        <p class="ai-note">
+          <strong>Uso de IA:</strong> desenvolvido com o Claude Code como principal
+          ferramenta de escrita de código — da engine de inferência ao driver, eu
+          direcionei a arquitetura e revisei o resultado.
+        </p>
+        <div class="stack">
+          <span>C++17</span>
+          <span>C#</span>
+          <span>ONNX Runtime</span>
+          <span>DirectML</span>
+          <span>DXGI</span>
+          <span>DirectX 11</span>
+          <span>YOLO26s</span>
+          <span>Kernel Driver</span>
+        </div>
+        <div class="card-links" style="margin-top: 14px;">
+          <a href="https://github.com/dzn0/iris-computer-vision" target="_blank" rel="noopener">Código →</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="ai-legend box-green">
+        <h2>Modelo de decisão por imitação (behavioral cloning)</h2>
+        <span class="ai-badge vibecoded">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(45 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(90 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(135 12 12)"/>
+          </svg>
+          Vibecoded com Claude Code
+        </span>
+        <p style="margin-top: 12px;">
+          Experimento de <strong>behavioral cloning</strong>: um script em Python
+          (<code>mss</code> + <code>pynput</code>) grava, a 30fps, frames de tela e a
+          posição do mouse/teclas pressionadas durante partidas humanas de League of
+          Legends. Esses dados treinam uma <strong>EfficientNet-B0</strong>
+          (pré-treinada em ImageNet) com duas cabeças de saída — uma prevendo a posição
+          do mouse por regressão (MSE) e outra prevendo quais teclas estão pressionadas
+          por classificação multi-label (BCE) — usando Adam, CosineAnnealingLR e early
+          stopping. Depois de treinado, o modelo é exportado de PyTorch pra
+          <strong>ONNX Runtime</strong> pra rodar inferência em tempo real.
+        </p>
+        <p class="ai-note">
+          <strong>Uso de IA:</strong> desenvolvido com o Claude Code como principal
+          ferramenta de escrita de código — eu direcionei o pipeline (gravação, treino,
+          exportação) e revisei o resultado.
+        </p>
+        <div class="stack">
+          <span>Python</span>
+          <span>PyTorch</span>
+          <span>EfficientNet-B0</span>
+          <span>ONNX Runtime</span>
+          <span>mss</span>
+          <span>pynput</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="ai-legend box-amber">
+        <h2>LLM local na própria GPU</h2>
+        <span class="ai-badge assisted">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(45 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(90 12 12)"/>
+            <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(135 12 12)"/>
+          </svg>
+          IA como assistente
+        </span>
+        <p style="margin-top: 12px;">
+          Servidor de inferência 100% local: um modelo open-weight de 27B parâmetros
+          (Qwen 3.6, formato GGUF) rodando via <strong>llama.cpp</strong>
+          (<code>llama-server</code>) numa RTX 5060 Ti de 16GB, alimentando o
+          <strong>opencode</strong> — um agente de código no estilo Claude Code, mas
+          apontado pro modelo local em vez de uma API na nuvem. A parte de engenharia
+          foi balancear tamanho do modelo × janela de contexto × VRAM disponível:
+          comparei várias quantizações (de Q3_K_M a i1-IQ2_M), medindo o contexto
+          máximo estável em cada uma, e usei compressão do KV-cache
+          (<code>--cache-type-k/v q4_0</code>) + Flash Attention pra esticar o contexto
+          sem estourar a memória. Configuração final: quant i1-IQ3_XS, 80K de contexto,
+          ~14.7GB de VRAM em uso.
+        </p>
+        <p class="ai-note">
+          <strong>Uso de IA:</strong> configurado por mim (parâmetros do llama.cpp,
+          comparação de quantizações), usando IA de chat pontualmente pra tirar dúvidas
+          sobre trade-offs de memória/contexto.
+        </p>
+        <div class="stack">
+          <span>llama.cpp</span>
+          <span>GGUF</span>
+          <span>Qwen 3.6 27B</span>
+          <span>CUDA</span>
+          <span>Flash Attention</span>
+          <span>KV Cache Quantization</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="ai-legend box-purple">
+        <h2>Devtracker — Referências de design</h2>
+        <span class="ai-badge none">Sem IA</span>
+        <p style="margin-top: 12px;">
+          Prints de dashboards que estou usando como referência visual (paleta escura,
+          roxo/violeta, cards de métricas, heatmap de atividade) para desenhar a interface
+          do devtracker antes de implementar.
+        </p>
+        <div class="gallery">
+          <figure>
+            <img src="../assets/creations/devtracker/dashboard-reference.png" alt="Referência de dashboard escuro com cards de métricas e heatmap de atividade" />
+            <figcaption>Dashboard — cards de métricas + heatmap de atividade</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/creations/devtracker/sessoes-reference.png" alt="Referência de tela de listagem de sessões com filtros e tabela" />
+            <figcaption>Sessões — listagem com filtros e tabela</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
 
     <footer>
       <span>dzn0 · 2026</span>
@@ -74,5 +368,6 @@
     </footer>
   </div>
   <script src="../assets/theme.js"></script>
+  <script src="../assets/lightbox.js"></script>
 </body>
 </html>
