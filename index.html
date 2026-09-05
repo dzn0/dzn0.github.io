@@ -6,21 +6,48 @@
   <title>dzn0 — Portfólio de Projetos</title>
   <meta name="description" content="Projetos técnicos de André — analisa-cv, unesp-vagas-monitor, devtracker." />
   <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">dzn0</a>
+      <nav>
+        <a href="index.html" aria-current="page">Projetos</a>
+        <a href="criacoes/index.html">Criações</a>
+        <a href="https://github.com/dzn0" target="_blank" rel="noopener">GitHub</a>
+        <button class="theme-toggle" type="button" onclick="window.__toggleTheme()" aria-label="Alternar tema claro/escuro">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
   <div class="wrap">
     <header class="hero">
-      <p class="eyebrow">Portfólio de Projetos</p>
-      <h1>André Pereira de pieri — dzn0</h1>
-      <p class="lede">
-        Projetos que resolvem problemas reais, do produto em produção ao script que
-        nasceu de uma necessidade pessoal.
-      </p>
-      <nav class="nav-links">
-        <a href="index.html" aria-current="page">Projetos</a>
-        <a href="criacoes/index.html">Coleção de Criações</a>
-        <a href="https://github.com/dzn0" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+      <img class="avatar" src="assets/profile.png" alt="Foto de André Pereira de Pieri" />
+      <div>
+        <p class="eyebrow">Portfólio de Projetos</p>
+        <h1>André Pereira de pieri — dzn0</h1>
+        <p class="lede">
+          Projetos que resolvem problemas reais, do produto em produção ao script que
+          nasceu de uma necessidade pessoal.
+        </p>
+      </div>
     </header>
 
     <section class="ai-legend">
@@ -172,5 +199,6 @@
       <a href="https://github.com/dzn0" target="_blank" rel="noopener">github.com/dzn0</a>
     </footer>
   </div>
+  <script src="assets/theme.js"></script>
 </body>
 </html>

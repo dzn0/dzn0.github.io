@@ -6,21 +6,47 @@
   <title>dzn0 — Coleção de Criações</title>
   <meta name="description" content="Lado criativo e exploratório de André — design, protótipos, experimentos." />
   <link rel="stylesheet" href="../assets/style.css" />
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">dzn0</a>
+      <nav>
+        <a href="../index.html">Projetos</a>
+        <a href="index.html" aria-current="page">Criações</a>
+        <a href="https://github.com/dzn0" target="_blank" rel="noopener">GitHub</a>
+        <button class="theme-toggle" type="button" onclick="window.__toggleTheme()" aria-label="Alternar tema claro/escuro">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
   <div class="wrap">
     <header class="hero">
-      <p class="eyebrow">Coleção de Criações</p>
-      <h1>Explorações</h1>
-      <p class="lede">
-        Um espaço mais livre — design, protótipos visuais e experimentos que não
-        precisam necessariamente ser "úteis".
-      </p>
-      <nav class="nav-links">
-        <a href="../index.html">Projetos</a>
-        <a href="index.html" aria-current="page">Coleção de Criações</a>
-        <a href="https://github.com/dzn0" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+      <div>
+        <p class="eyebrow">Coleção de Criações</p>
+        <h1>Explorações</h1>
+        <p class="lede">
+          Um espaço mais livre — design, protótipos visuais e experimentos que não
+          precisam necessariamente ser "úteis".
+        </p>
+      </div>
     </header>
 
     <section>
@@ -47,5 +73,6 @@
       <a href="https://github.com/dzn0" target="_blank" rel="noopener">github.com/dzn0</a>
     </footer>
   </div>
+  <script src="../assets/theme.js"></script>
 </body>
 </html>
