@@ -136,8 +136,9 @@ header.hero {
 }
 
 .avatar {
-  width: 64px;
-  height: 64px;
+  width: 84px;
+  height: 84px;
+  margin-top: 27px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--border);
