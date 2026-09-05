@@ -11,7 +11,7 @@
   <div class="wrap">
     <header class="hero">
       <p class="eyebrow">Portfólio de Projetos</p>
-      <h1>dzn0</h1>
+      <h1>André Pereira de pieri — dzn0</h1>
       <p class="lede">
         Projetos que resolvem problemas reais, do produto em produção ao script que
         nasceu de uma necessidade pessoal.
@@ -23,6 +23,44 @@
       </nav>
     </header>
 
+    <section class="ai-legend">
+      <h2>Uso de IA</h2>
+      <p>
+        Conforme as normas do processo seletivo, cada projeto abaixo indica como
+        inteligência artificial foi utilizada em seu desenvolvimento.
+      </p>
+      <div class="ai-key">
+        <div class="ai-key-item">
+          <span class="ai-badge vibecoded">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(45 12 12)"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(90 12 12)"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(135 12 12)"/>
+            </svg>
+            Vibecoded
+          </span>
+          <p>A IA (Claude Code, da Anthropic) escreveu a maior parte do código, orientada por mim.</p>
+        </div>
+        <div class="ai-key-item">
+          <span class="ai-badge assisted">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(45 12 12)"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(90 12 12)"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(135 12 12)"/>
+            </svg>
+            IA como assistente
+          </span>
+          <p>Escrevi o código eu mesmo, usando o Claude (chat) pontualmente para dúvidas e revisão.</p>
+        </div>
+        <div class="ai-key-item">
+          <span class="ai-badge none">Sem IA</span>
+          <p>Apenas consulta à documentação oficial, sem uso de IA generativa.</p>
+        </div>
+      </div>
+    </section>
+
     <section>
       <h2>Em destaque</h2>
       <article class="card featured">
@@ -30,10 +68,26 @@
           <h3><a href="https://github.com/dzn0/analisa-cv" target="_blank" rel="noopener">analisa-cv</a></h3>
           <span class="tag">produção</span>
         </div>
+        <div class="card-top" style="margin-top:-8px; margin-bottom:14px;">
+          <span class="ai-badge vibecoded">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(45 12 12)"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(90 12 12)"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(135 12 12)"/>
+            </svg>
+            Vibecoded com Claude Code
+          </span>
+        </div>
         <p>
           Produto completo em produção (<a href="https://analisacv.com.br" target="_blank" rel="noopener" style="color:var(--text-dim)">analisacv.com.br</a>).
           Reescreve currículos usando a API da Anthropic (Claude Haiku), com pagamento via
           Pix (Mercado Pago) e Stripe, e exportação em PDF.
+        </p>
+        <p class="ai-note">
+          <strong>Uso de IA:</strong> desenvolvido com o Claude Code (Anthropic) como
+          principal ferramenta de escrita de código — eu direcionei arquitetura, decisões
+          de produto e revisei o resultado, mas a IA gerou a maior parte da implementação.
         </p>
         <div class="stack">
           <span>Frontend estático</span>
@@ -55,11 +109,24 @@
       <article class="card">
         <div class="card-top">
           <h3><a href="https://github.com/dzn0/unesp-vagas-monitor" target="_blank" rel="noopener">unesp-vagas-monitor</a></h3>
+          <span class="ai-badge assisted">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(45 12 12)"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(90 12 12)"/>
+              <rect x="10.5" y="1" width="3" height="22" rx="1.5" transform="rotate(135 12 12)"/>
+            </svg>
+            IA como assistente
+          </span>
         </div>
         <p>
           Bot que roda 100% em GitHub Actions, checa a página de transferência da UNESP
           duas vezes ao dia e avisa via WhatsApp (CallMeBot) quando abre vaga. Zero
           infraestrutura própria — nasceu de uma necessidade pessoal real.
+        </p>
+        <p class="ai-note">
+          <strong>Uso de IA:</strong> escrevi o código eu mesmo; usei o Claude (chat) como
+          apoio pontual para tirar dúvidas e revisar trechos específicos.
         </p>
         <div class="stack">
           <span>GitHub Actions</span>
@@ -76,9 +143,16 @@
           <h3><a href="https://github.com/dzn0/devtracker" target="_blank" rel="noopener">devtracker</a></h3>
           <span class="tag wip">em progresso</span>
         </div>
+        <div class="card-top" style="margin-top:-8px; margin-bottom:14px;">
+          <span class="ai-badge none">Sem IA</span>
+        </div>
         <p>
           Habit tracker de estudo/código. Ainda no começo, incluído aqui para mostrar
           trabalho em andamento.
+        </p>
+        <p class="ai-note">
+          <strong>Uso de IA:</strong> nenhum. Desenvolvido consultando apenas
+          documentação oficial (Next.js, Prisma, Tailwind).
         </p>
         <div class="stack">
           <span>Next.js</span>

@@ -189,6 +189,75 @@ section > h2 {
   text-decoration: underline;
 }
 
+.ai-legend {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  background: var(--bg-elev);
+}
+
+.ai-legend > p {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.ai-key {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.ai-key-item p {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin: 8px 0 0;
+}
+
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.ai-badge svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.ai-badge.vibecoded {
+  color: #e8a077;
+  border-color: #6b4530;
+  background: rgba(217, 119, 87, 0.08);
+}
+
+.ai-badge.assisted {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+  background: rgba(124, 156, 255, 0.06);
+}
+
+.ai-badge.none {
+  color: #8fc396;
+  border-color: #3d5c40;
+  background: rgba(143, 195, 150, 0.06);
+}
+
+.card .ai-note {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin: 0 0 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
 .placeholder {
   border: 1px dashed var(--border);
   border-radius: var(--radius);
