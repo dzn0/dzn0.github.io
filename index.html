@@ -108,8 +108,11 @@
         </div>
         <p>
           Produto completo em produção (<a href="https://analisacv.com.br" target="_blank" rel="noopener" style="color:var(--text-dim)">analisacv.com.br</a>).
-          Reescreve currículos usando a API da Anthropic (Claude Haiku), com pagamento via
-          Pix (Mercado Pago) e Stripe, e exportação em PDF.
+          Frontend em JavaScript puro (sem framework), HTML e CSS, com PDF.js para extrair
+          texto de currículos enviados em PDF e html2pdf para exportar o resultado. O
+          backend roda como Vercel Edge Functions, também em JavaScript, e envia o texto
+          extraído para a API da Anthropic (modelo Claude Haiku) que faz a análise e
+          reescrita estruturada. Cobrança via Pix (Mercado Pago) e cartão (Stripe).
         </p>
         <p class="ai-note">
           <strong>Uso de IA:</strong> desenvolvido com o Claude Code (Anthropic) como
@@ -117,7 +120,10 @@
           de produto e revisei o resultado, mas a IA gerou a maior parte da implementação.
         </p>
         <div class="stack">
-          <span>Frontend estático</span>
+          <span>JavaScript</span>
+          <span>HTML/CSS</span>
+          <span>PDF.js</span>
+          <span>html2pdf</span>
           <span>Vercel Edge Functions</span>
           <span>Claude API</span>
           <span>Mercado Pago</span>
@@ -147,8 +153,11 @@
           </span>
         </div>
         <p>
-          Bot que roda 100% em GitHub Actions, checa a página de transferência da UNESP
-          duas vezes ao dia e avisa via WhatsApp (CallMeBot) quando abre vaga. Zero
+          Script em Bash (shell script puro, sem runtime externo) orquestrado por um
+          workflow do GitHub Actions com cron às 09:07 e 20:07 (BRT). O script baixa o
+          HTML da página de transferência da UNESP com curl, normaliza o texto (minúsculas
+          e remoção de acentos) e usa grep pra procurar "transferência externa"; quando
+          encontra, dispara uma notificação via WhatsApp usando a API do CallMeBot. Zero
           infraestrutura própria — nasceu de uma necessidade pessoal real.
         </p>
         <p class="ai-note">
@@ -156,8 +165,10 @@
           apoio pontual para tirar dúvidas e revisar trechos específicos.
         </p>
         <div class="stack">
+          <span>Bash</span>
           <span>GitHub Actions</span>
-          <span>Node.js</span>
+          <span>cron</span>
+          <span>curl</span>
           <span>CallMeBot API</span>
         </div>
         <div class="card-links">
@@ -174,19 +185,23 @@
           <span class="ai-badge none">Sem IA</span>
         </div>
         <p>
-          Habit tracker de estudo/código. Ainda no começo, incluído aqui para mostrar
-          trabalho em andamento.
+          Habit tracker de estudo/código. Construído com Next.js 16 (App Router) e React
+          19 em TypeScript, estilizado com Tailwind CSS 4, ícones via lucide-react e
+          animações com a biblioteca motion. Persistência com Postgres via Prisma ainda
+          não implementada — é o próximo passo. Ainda no começo, incluído aqui para
+          mostrar trabalho em andamento.
         </p>
         <p class="ai-note">
           <strong>Uso de IA:</strong> nenhum. Desenvolvido consultando apenas
           documentação oficial (Next.js, Prisma, Tailwind).
         </p>
         <div class="stack">
-          <span>Next.js</span>
+          <span>Next.js 16</span>
+          <span>React 19</span>
           <span>TypeScript</span>
-          <span>Tailwind</span>
-          <span>Postgres</span>
-          <span>Prisma</span>
+          <span>Tailwind CSS 4</span>
+          <span>lucide-react</span>
+          <span>motion</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/dzn0/devtracker" target="_blank" rel="noopener">Código →</a>
