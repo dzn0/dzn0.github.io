@@ -321,6 +321,15 @@ section > h2 {
   border-color: var(--wip-border);
 }
 
+.updated-date {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-dim);
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
 .card p {
   color: var(--text-dim);
   margin: 0 0 12px;
